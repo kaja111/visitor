@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <center>
+    <h1> India Metal One Steel Plate Processing Private Limited </h1>
+    <br>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<style>
+    body {background-color: powderblue;}
+    h1   {color: blue;}
+    p    {color: red;}
+    </style>
+<body>
+    <h1>Visitor Management System</h1>
+</br>
+    <div class="form-container">
+        <h2>Register Visitor Details</h2>
+        <form action="/register" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact:</label>
+                <input type="text" id="contact" name="contact" required>
+            </div>
+            <div class="form-group">
+                <label for="purpose">Purpose:</label>
+                <input type="text" id="purpose" name="purpose" required>
+            </div>
+            <input type="submit" value="Register" class="button">
+        </form>
+    </div>
+
+    <div class="form-container">
+        <h2>Checkout Visitor</h2>
+        <form action="/checkout" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <input type="submit" value="Checkout" class="button">
+        </form>
+    </div>
+
+    <div class="message-container">
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
+</center>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visitor Management System - Visitors List</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<style>
+    body {background-color: powderblue;}
+    h1   {color: blue;}
+    p    {color: red;}
+    </style>
+<body>
+    <h1>Visitors List</h1>
+
+    <form action="/list_visitors" method="post">
+        <label for="table">Select a Day:</label>
+        <select id="table" name="table">
+            {% for table in tables %}
+                <option value="{{ table[0] }}">{{ table[0] }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Show Visitors" class="button">
+    </form>
+
+    <table class="visitor-table">
+        <tr>
+            <th>Serial Number</th>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Purpose</th>
+            <th>Check-in</th>
+            <th>Check-out</th>
+        </tr>
+        {% for visitor in visitors %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ visitor[0] }}</td>
+            <td>{{ visitor[1] }}</td>
+            <td>{{ visitor[2] }}</td>
+            <td>{{ visitor[3] }}</td>
+            <td>{{ visitor[4] if visitor[4] else 'Not checked out yet' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
